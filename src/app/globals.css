@@ -1,26 +1,184 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #050308;
+  --bg-elevated: #0b0813;
+  --ink: #f5f3fa;
+  --muted: #9b96b3;
+  --line: rgba(245, 243, 250, 0.09);
+  --glass: rgba(245, 243, 250, 0.045);
+  --glass-strong: rgba(245, 243, 250, 0.09);
+  --violet: #8b5cf6;
+  --violet-600: #7c3aed;
+  --cyan: #35e6d6;
+  --magenta: #ff4fa3;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-glass: var(--glass);
+  --color-glass-strong: var(--glass-strong);
+  --color-violet: var(--violet);
+  --color-violet-600: var(--violet-600);
+  --color-cyan: var(--cyan);
+  --color-magenta: var(--magenta);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-bricolage);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--line);
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--violet);
+  color: #fff;
+}
+
+/* Custom scrollbar — thin, glassy, matches the aurora accent */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--violet), var(--cyan));
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid var(--line);
+  }
+
+  .glass-strong {
+    background: var(--glass-strong);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid var(--line);
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #fff 20%, var(--violet) 55%, var(--cyan) 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .noise::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.logo-mask {
+  mask-image: url("/brand/logo.svg");
+  -webkit-mask-image: url("/brand/logo.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+@keyframes logo-shine {
+  0% {
+    background-position: -150% 0%;
+  }
+  45% {
+    background-position: 150% 0%;
+  }
+  100% {
+    background-position: 150% 0%;
+  }
+}
+
+.logo-shine {
+  background-size: 300% 100%;
+  animation: logo-shine 6s ease-in-out infinite;
+}
+
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(-10%, -10%) scale(1);
+  }
+  50% {
+    transform: translate(8%, 6%) scale(1.15);
+  }
+}
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(6%, 10%) scale(1.1);
+  }
+  50% {
+    transform: translate(-8%, -6%) scale(0.95);
+  }
+}
+@keyframes drift-c {
+  0%,
+  100% {
+    transform: translate(0%, 0%) scale(1);
+  }
+  50% {
+    transform: translate(-6%, 8%) scale(1.2);
+  }
+}
+
+.animate-drift-a {
+  animation: drift-a 22s ease-in-out infinite;
+}
+.animate-drift-b {
+  animation: drift-b 26s ease-in-out infinite;
+}
+.animate-drift-c {
+  animation: drift-c 30s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
