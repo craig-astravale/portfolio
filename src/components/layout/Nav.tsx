@@ -36,11 +36,16 @@ export function Nav() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
       className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-6"
     >
-      <nav className="glass-strong flex items-center gap-1 rounded-full px-2 py-2 shadow-[0_8px_40px_-12px_rgba(139,92,246,0.35)] sm:gap-2 sm:px-3">
-        <a href="#hero" data-cursor-hover className="flex items-center pl-1 pr-2">
-          <LogoMark size={22} animated={false} />
+      <nav className="liquid-glass flex items-center gap-1 rounded-full px-2 py-2 sm:gap-2 sm:px-3">
+        <a
+          href="#hero"
+          data-cursor-hover
+          aria-label="Back to top"
+          className="flex items-center pl-1.5 pr-2.5 drop-shadow-[0_0_14px_rgba(139,92,246,0.45)]"
+        >
+          <LogoMark size={30} animated={false} />
         </a>
-        <div className="hidden h-5 w-px bg-line sm:block" />
+        <div className="hidden h-6 w-px bg-line sm:block" />
         <div className="flex items-center gap-1">
           {nav.map((item) => (
             <a
@@ -48,8 +53,8 @@ export function Nav() {
               href={item.href}
               data-cursor-hover
               className={cn(
-                "rounded-full px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-muted transition-colors duration-300 hover:text-ink",
-                active === item.href && "bg-white/10 text-ink"
+                "rounded-full px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-ink/75 transition-colors duration-300 hover:text-ink",
+                active === item.href && "bg-white/15 text-ink"
               )}
             >
               {item.label}

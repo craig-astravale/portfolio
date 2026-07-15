@@ -71,16 +71,43 @@ body {
 @layer utilities {
   .glass {
     background: var(--glass);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid var(--line);
   }
 
   .glass-strong {
     background: var(--glass-strong);
-    backdrop-filter: blur(28px) saturate(160%);
-    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
     border: 1px solid var(--line);
+  }
+
+  /* Liquid glass for the fixed chrome (nav + dock): dark tinted base keeps
+     text legible over any content; layered gradients fake the curvature
+     sheen; inset shadows draw the specular rim. Gradients sit under text. */
+  .liquid-glass {
+    background:
+      radial-gradient(
+        120% 90% at 50% 0%,
+        rgba(255, 255, 255, 0.09),
+        transparent 60%
+      ),
+      linear-gradient(
+        140deg,
+        rgba(255, 255, 255, 0.07),
+        transparent 45%,
+        rgba(255, 255, 255, 0.04) 90%
+      ),
+      rgba(13, 9, 22, 0.8);
+    backdrop-filter: blur(28px) saturate(180%) brightness(1.08);
+    -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(1.08);
+    border: 1px solid rgba(245, 243, 250, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+      0 14px 44px -14px rgba(0, 0, 0, 0.6),
+      0 10px 44px -12px rgba(139, 92, 246, 0.35);
   }
 
   .text-gradient {
@@ -90,14 +117,15 @@ body {
     color: transparent;
   }
 
+  /* No mix-blend-mode: blending a fixed full-viewport layer forces the
+     compositor to re-blend the whole screen on every animated frame. */
   .noise::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: 60;
     pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
+    opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -132,6 +160,27 @@ body {
 .logo-shine {
   background-size: 300% 100%;
   animation: logo-shine 6s ease-in-out infinite;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hub-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
 }
 
 @keyframes drift-a {

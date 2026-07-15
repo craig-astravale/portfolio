@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { LogoMark } from "@/components/brand/LogoMark";
 import { LinkedInIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { Magnetic } from "@/components/ui/Magnetic";
@@ -12,6 +13,13 @@ export function Contact() {
       className="relative overflow-hidden px-6 pt-28 pb-40 sm:px-10 sm:pt-40 sm:pb-48"
     >
       <Aurora className="opacity-70" />
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[52%]"
+      >
+        <div className="logo-mask h-[36rem] w-[31rem] bg-[linear-gradient(to_bottom,rgba(139,92,246,0.13),rgba(53,230,214,0.02))]" />
+      </div>
 
       <div className="relative mx-auto max-w-3xl text-center">
         <Reveal>
@@ -63,8 +71,16 @@ export function Contact() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.28}>
+          <div className="mt-24 flex items-center justify-center gap-5">
+            <span className="h-px w-16 bg-linear-to-r from-transparent to-line sm:w-24" />
+            <LogoMark size={26} animated={false} />
+            <span className="h-px w-16 bg-linear-to-l from-transparent to-line sm:w-24" />
+          </div>
+        </Reveal>
+
         <Reveal delay={0.3}>
-          <p className="mt-24 font-mono text-xs uppercase tracking-wide text-muted">
+          <p className="mt-10 font-mono text-xs uppercase tracking-wide text-muted">
             {profile.name} · {profile.location} · Built with Next.js, GSAP
             &amp; React Three Fiber
           </p>

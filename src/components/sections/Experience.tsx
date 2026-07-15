@@ -88,6 +88,24 @@ export function Experience() {
                     <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
                       {entry.description}
                     </p>
+                    {entry.highlights && (
+                      <ul className="mt-4 max-w-2xl space-y-2">
+                        {entry.highlights.map((highlight) => (
+                          <li
+                            key={highlight}
+                            className="flex gap-3 text-sm leading-relaxed text-muted"
+                          >
+                            <span
+                              className={cn(
+                                "mt-2 h-1 w-1 shrink-0 rounded-full",
+                                entry.current ? "bg-cyan" : "bg-violet"
+                              )}
+                            />
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     <div className="mt-5 flex flex-wrap gap-2">
                       {entry.tags.map((tag) => (
                         <span

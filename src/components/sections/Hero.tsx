@@ -42,7 +42,9 @@ export function Hero() {
     >
       <Aurora />
 
-      <div className="absolute inset-0 lg:translate-x-28 xl:translate-x-40">
+      {/* On desktop the logo lives right of the copy; shrinking the canvas to
+          that region cuts the rendered pixel area by ~25%. */}
+      <div className="absolute inset-y-0 left-0 right-0 lg:left-1/4">
         <Scene />
       </div>
 

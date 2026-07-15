@@ -41,6 +41,31 @@ export function About() {
             </span>
           </div>
         </Reveal>
+
+        <Reveal delay={0.3}>
+          <div className="glass mt-4 flex flex-col gap-4 rounded-2xl px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-60" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-violet" />
+              </span>
+              <span className="text-sm text-ink">
+                Founder of <strong className="font-medium">cvitae</strong>,
+                South Africa&apos;s best AI-powered CV builder with live ATS
+                scoring
+              </span>
+            </div>
+            <a
+              href="https://www.cvitae.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor-hover
+              className="font-mono text-xs uppercase tracking-wide text-muted transition-colors hover:text-violet"
+            >
+              cvitae.co.za ↗
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
