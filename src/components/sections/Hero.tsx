@@ -47,6 +47,12 @@ export function Hero() {
       <div className="absolute inset-y-0 left-0 right-0 lg:left-1/4">
         <Scene />
       </div>
+      {/* Below lg the copy sits directly on the 3D mark — veil it for
+          legibility while keeping it visible as ambient art. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-bg/55 lg:hidden"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <motion.div

@@ -3,11 +3,18 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { LogoCore } from "./LogoCore";
-import { useIsCoarsePointer, useReducedMotion } from "@/hooks/useMediaQuery";
+import {
+  useIsCoarsePointer,
+  useMediaQuery,
+  useReducedMotion,
+} from "@/hooks/useMediaQuery";
 
 export function Scene() {
   const isCoarse = useIsCoarsePointer();
   const reducedMotion = useReducedMotion();
+  // Below lg the canvas sits behind the hero copy, so the mark renders
+  // smaller and higher to leave the text room.
+  const compact = useMediaQuery("(max-width: 1023px)");
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(true);
 
@@ -36,7 +43,11 @@ export function Scene() {
       >
         <ambientLight intensity={0.4} />
         <Suspense fallback={null}>
-          <LogoCore interactive={!isCoarse} reducedMotion={reducedMotion} />
+          <LogoCore
+            interactive={!isCoarse}
+            reducedMotion={reducedMotion}
+            compact={compact}
+          />
         </Suspense>
       </Canvas>
     </div>

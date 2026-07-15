@@ -98,9 +98,11 @@ function OrbitRings({ reducedMotion }: { reducedMotion: boolean }) {
 export function LogoCore({
   interactive = true,
   reducedMotion = false,
+  compact = false,
 }: {
   interactive?: boolean;
   reducedMotion?: boolean;
+  compact?: boolean;
 }) {
   const group = useRef<THREE.Group>(null);
   const logo = useRef<THREE.Group>(null);
@@ -137,7 +139,11 @@ export function LogoCore({
   });
 
   return (
-    <group ref={group}>
+    <group
+      ref={group}
+      scale={compact ? 0.75 : 1}
+      position={compact ? [0, 0.35, 0] : [0, 0, 0]}
+    >
       <Float
         speed={reducedMotion ? 0 : 1.4}
         rotationIntensity={reducedMotion ? 0 : 0.15}

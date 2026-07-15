@@ -197,7 +197,7 @@ function OrbitRing({
                 <div
                   data-cursor-hover
                   className={cn(
-                    "glass flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs text-ink w-max",
+                    "glass flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:py-1.5 sm:text-xs text-ink w-max",
                     "shadow-[0_4px_20px_-6px_rgba(139,92,246,0.4)] transition-[transform,border-color,box-shadow] duration-300 hover:scale-110",
                     categoryStyle[skill.category].chip
                   )}
@@ -271,7 +271,7 @@ export function Skills() {
             onMouseLeave={() => setPaused(false)}
             className={cn(
               "relative mx-auto mt-20 aspect-square w-[clamp(280px,80vw,34rem)]",
-              "[--r1:6rem] [--r2:10.5rem] sm:[--r1:7.5rem] sm:[--r2:13rem] lg:[--r1:8.5rem] lg:[--r2:15rem]"
+              "[--r1:6rem] [--r2:7.5rem] sm:[--r1:7.5rem] sm:[--r2:13rem] lg:[--r1:8.5rem] lg:[--r2:15rem]"
             )}
           >
             <RingTrack radiusVar="--r1" spinDuration={14} paused={offScreen} />
