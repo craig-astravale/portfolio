@@ -41,7 +41,7 @@ export function Experience() {
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="mt-6 font-[family-name:var(--font-display)] text-[clamp(2rem,4.5vw,3.25rem)] font-medium leading-tight">
-            Sixteen years, three rooms.
+            Sixteen years of craft and my recent roles.
           </h2>
         </Reveal>
 
