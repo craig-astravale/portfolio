@@ -8,9 +8,9 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/craigddutoit/",
   linkedinHandle: "in/craigddutoit",
   yearsExperience: 16,
-  currently: "Osiris Trading — Betway",
+  currently: "Osiris Trading, Betway",
   summary:
-    "Front-end engineer with 16 years of experience specializing in motion design and interactive 3D web experiences. I ship React applications built on GSAP, Three.js and Motion — work that's moved engagement 25–40% along the way — with a focus on motion-first design systems and mentoring teams on animation craft.",
+    "Front-end engineer with 16 years of experience specializing in motion design and interactive 3D web experiences. I ship React applications built on GSAP, Three.js and Motion, work that's moved engagement 25–40% along the way, with a focus on motion-first design systems and mentoring teams on animation craft.",
 } as const;
 
 export const stats = [
@@ -32,8 +32,8 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     company: "Osiris Trading",
-    role: "Software Developer — Team Lead",
-    period: "Nov 2021 — Present",
+    role: "Software Developer, Team Lead",
+    period: "Nov 2021 – Present",
     current: true,
     description:
       "Leading promotions and gamification for Betway, where animation is the product: spinning wheels, card games, prediction games and interactive 3D experiences that make promotions feel alive.",
@@ -48,7 +48,7 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Orderwise",
     role: "Front-End Developer",
-    period: "Nov 2019 — Oct 2021",
+    period: "Nov 2019 – Oct 2021",
     description:
       "Modernized enterprise commerce software on a refinement-cycle team, moving a legacy front-end onto today's stack without dropping the ball on stability.",
     highlights: [
@@ -62,12 +62,12 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Ninja Technologies",
     role: "Lead Front-End",
-    period: "May 2014 — Oct 2019",
+    period: "May 2014 – Oct 2019",
     description:
-      "Agency lead across strategy, brand and delivery — building design systems before they had a name, and learning to own the client relationship, not just the code.",
+      "Agency lead across strategy, brand and delivery, building design systems before they had a name, and learning to own the client relationship, not just the code.",
     highlights: [
       "In charge of technological advancement: adoption, tooling and mentorship across the studio",
-      "Built and maintained a bespoke UI kit serving every client — maintainable systems before the days of shadcn and Tailwind",
+      "Built and maintained a bespoke UI kit serving every client, maintainable systems before the days of shadcn and Tailwind",
       "Directed initial client engagements with direct relationship ownership",
       "Established brand identity strategy and led delivery as Scrum lead",
     ],
@@ -108,9 +108,9 @@ export type WorkEntry = {
 
 export const work: WorkEntry[] = [
   {
-    title: "cvitae — AI-Powered CV Builder",
+    title: "cvitae: AI-Powered CV Builder",
     blurb:
-      "Founded and built end-to-end: South Africa's best AI-powered CV builder with live ATS scoring. Next.js, Supabase and Paystack subscriptions — every pixel, query and deployment shipped solo.",
+      "Founded and built end-to-end: South Africa's best AI-powered CV builder with live ATS scoring. Next.js, Supabase and Paystack subscriptions, every pixel, query and deployment shipped solo.",
     tags: ["Founder", "Next.js", "Supabase", "AI"],
     status: "Live",
     href: "https://www.cvitae.co.za",
@@ -128,7 +128,7 @@ export const work: WorkEntry[] = [
   {
     title: "This Site",
     blurb:
-      "You're looking at it — Next.js, GSAP ScrollTrigger, React Three Fiber and Motion, built to be its own proof of craft.",
+      "You're looking at it: Next.js, GSAP ScrollTrigger, React Three Fiber and Motion, built to be its own proof of craft.",
     tags: ["Next.js", "GSAP", "R3F", "Motion"],
     status: "Live",
     logo: { src: "/brand/logo.svg", aspect: 583 / 668 },

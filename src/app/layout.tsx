@@ -26,7 +26,7 @@ const siteUrl = "https://craigdutoit.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${profile.name} — ${profile.role}, Motion & 3D Web`,
+  title: `${profile.name} - ${profile.role}, Motion & 3D Web`,
   description: profile.summary,
   keywords: [
     "Craig du Toit",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: profile.name }],
   openGraph: {
-    title: `${profile.name} — ${profile.role}`,
+    title: `${profile.name} - ${profile.role}`,
     description: profile.tagline,
     url: siteUrl,
     siteName: profile.name,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — ${profile.role}`,
+    title: `${profile.name} - ${profile.role}`,
     description: profile.tagline,
   },
 };
