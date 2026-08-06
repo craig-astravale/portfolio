@@ -14,13 +14,13 @@ export function About() {
         <Reveal delay={0.1}>
           <p className="mt-8 font-[family-name:var(--font-display)] text-[clamp(1.6rem,3.6vw,2.75rem)] font-medium leading-[1.3] text-ink">
             For sixteen years I&apos;ve been turning interface ideas into
-            things that <span className="text-gradient">move</span> — React
+            things that <span className="text-gradient">move</span>, React
             apps engineered with{" "}
             <span className="text-violet">GSAP</span>,{" "}
             <span className="text-cyan">Three.js</span> and{" "}
             <span className="text-magenta">Motion</span>, built as reusable
-            systems so a whole team can ship consistent, high-craft animation
-            — not just one hero project.
+            systems so a whole team can ship consistent, high-craft animation,
+            not just one hero project.
           </p>
         </Reveal>
 
