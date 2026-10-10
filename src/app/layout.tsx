@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   keywords: [
     "Craig du Toit",
     "Front-End Engineer",
+    "Vue.js",
     "GSAP",
     "Three.js",
     "React Three Fiber",

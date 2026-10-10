@@ -43,7 +43,7 @@ export const experience: ExperienceEntry[] = [
       "Own front-end strategy end to end: project planning, UI architecture and a motion-first design system",
       "Mentor the team on animation craft",
     ],
-    tags: ["React", "GSAP", "Three.js", "Gamification", "Leadership"],
+    tags: ["React", "Vue.js", "GSAP", "Three.js", "Gamification", "Leadership"],
   },
   {
     company: "Orderwise",
@@ -83,6 +83,7 @@ export type Skill = {
 export const skills: Skill[] = [
   { name: "React", category: "core" },
   { name: "Next.js", category: "core" },
+  { name: "Vue.js", category: "core" },
   { name: "TypeScript", category: "core" },
   { name: "GSAP", category: "motion" },
   { name: "Three.js", category: "motion" },
