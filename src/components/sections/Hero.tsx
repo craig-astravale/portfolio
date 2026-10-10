@@ -85,7 +85,7 @@ export function Hero() {
             className="mt-7 max-w-xl text-balance text-lg leading-relaxed text-muted"
           >
             I&apos;m {profile.name}, {profile.yearsExperience} years shipping
-            React, GSAP, Three.js and Motion. Motion-first design systems that
+            React, Vue.js, GSAP, Three.js and Motion. Motion-first design systems that
             move engagement 25–40%, not just pixels.
           </motion.p>
 

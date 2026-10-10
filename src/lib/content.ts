@@ -10,7 +10,7 @@ export const profile = {
   yearsExperience: 16,
   currently: "Osiris Trading, Betway",
   summary:
-    "Front-end engineer with 16 years of experience specializing in motion design and interactive 3D web experiences. I ship React applications built on GSAP, Three.js and Motion, work that's moved engagement 25–40% along the way, with a focus on motion-first design systems and mentoring teams on animation craft.",
+    "Front-end engineer with 16 years of experience specializing in motion design and interactive 3D web experiences. I ship React and Vue.js applications built on GSAP, Three.js and Motion, work that's moved engagement 25–40% along the way, with a focus on motion-first design systems and mentoring teams on animation craft.",
 } as const;
 
 export const stats = [

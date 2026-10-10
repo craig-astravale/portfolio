@@ -69,7 +69,7 @@ export default async function Image() {
             maxWidth: 900,
           }}
         >
-          {profile.yearsExperience} years shipping React, GSAP, Three.js
+          {profile.yearsExperience} years shipping React, Vue.js, GSAP, Three.js
           &amp; Motion.
         </div>
       </div>

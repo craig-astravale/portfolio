@@ -15,7 +15,7 @@ export function About() {
           <p className="mt-8 font-[family-name:var(--font-display)] text-[clamp(1.6rem,3.6vw,2.75rem)] font-medium leading-[1.3] text-ink">
             For sixteen years I&apos;ve been turning interface ideas into
             things that <span className="text-gradient">move</span>, React
-            apps engineered with{" "}
+            and Vue.js apps engineered with{" "}
             <span className="text-violet">GSAP</span>,{" "}
             <span className="text-cyan">Three.js</span> and{" "}
             <span className="text-magenta">Motion</span>, built as reusable
